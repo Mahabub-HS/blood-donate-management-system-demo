@@ -29,7 +29,7 @@ public class DonorController {
         }
     }
 
-    @GetMapping("")
+    @GetMapping(value = "/all")
     public ResponseEntity<List<Donor>> getDonors() {
         List<Donor> Alldonor = donorService.findAll();
         return ResponseEntity.ok(Alldonor);
