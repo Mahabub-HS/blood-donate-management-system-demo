@@ -19,7 +19,7 @@ public class DonorController {
         this.donorService = donorService;
     }
 
-    @PostMapping("")
+    @PostMapping(value = "/create")
     public ResponseEntity<Donor> createDonor(@RequestBody Donor donor) {
         try {
             Donor createDonor = donorService.createDonor(donor);
@@ -29,7 +29,7 @@ public class DonorController {
         }
     }
 
-    @GetMapping(value = "/all")
+    @GetMapping("")
     public ResponseEntity<List<Donor>> getDonors() {
         List<Donor> Alldonor = donorService.findAll();
         return ResponseEntity.ok(Alldonor);
